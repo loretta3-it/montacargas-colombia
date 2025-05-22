@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground shadow-md h-16">
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
-        <Link href="https://waspsolgroup.com/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <WaspLogo width={120} height={35} priority />
         </Link>
 
@@ -45,7 +45,7 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-primary text-primary-foreground w-[250px] p-6">
               <div className="flex flex-col space-y-4">
-                <Link href="https://waspsolgroup.com/" target="_blank" rel="noopener noreferrer" className="mb-4">
+                <Link href="/" className="mb-4">
                   <WaspLogo width={120} height={35} priority />
                 </Link>
                 {navLinks.map((link) => (
