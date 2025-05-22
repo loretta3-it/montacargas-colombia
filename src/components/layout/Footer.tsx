@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { WaspLogo } from '@/components/icons/WaspLogo';
-import { Globe, Facebook, Instagram, Youtube, Twitter, Linkedin } from 'lucide-react';
+import { Globe, Facebook, Instagram, Youtube, Twitter, Linkedin, MessageSquare, MapPin } from 'lucide-react';
 import { TikTokIcon } from '@/components/icons/TikTokIcon';
 
 const socialLinks = [
@@ -8,9 +8,11 @@ const socialLinks = [
   { href: "https://www.facebook.com/WASPCOLOMBIA", icon: Facebook, label: "Facebook" },
   { href: "https://www.instagram.com/waspcolombia", icon: Instagram, label: "Instagram" },
   { href: "https://www.tiktok.com/@waspcol01?lang=es%20", icon: TikTokIcon, label: "TikTok" },
-  { href: "#", icon: Twitter, label: "X (Twitter)" }, // Placeholder link
-  { href: "#", icon: Youtube, label: "YouTube" }, // Placeholder link
-  { href: "#", icon: Linkedin, label: "LinkedIn" }, // Placeholder link
+  { href: "https://wa.me/573008336000", icon: MessageSquare, label: "WhatsApp" },
+  { href: "https://maps.app.goo.gl/4qBsPKEcEuAiEhrk9", icon: MapPin, label: "Cómo llegar" },
+  // { href: "#", icon: Twitter, label: "X (Twitter)" }, // Placeholder link
+  // { href: "#", icon: Youtube, label: "YouTube" }, // Placeholder link
+  // { href: "#", icon: Linkedin, label: "LinkedIn" }, // Placeholder link
 ];
 
 export default function Footer() {
