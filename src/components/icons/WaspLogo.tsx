@@ -1,39 +1,30 @@
-import type { SVGProps } from 'react';
-
-// Using a generic wrench/gear icon as a placeholder for a visual Wasp logo part
-const WrenchIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-  </svg>
-);
-
+import Image from 'next/image';
 
 interface WaspLogoProps {
   className?: string;
-  iconSize?: string; // e.g., "h-8 w-8"
-  textSize?: string; // e.g., "text-xl"
-  subTextSize?: string; // e.g., "text-xs"
-  textColor?: string; // e.g., "text-white"
-  showSubtext?: boolean;
+  width: number;
+  height: number;
+  alt?: string;
+  priority?: boolean;
 }
 
 export function WaspLogo({
   className = "",
-  iconSize = "h-8 w-8",
-  textSize = "text-2xl",
-  subTextSize = "text-[0.6rem] sm:text-xs",
-  textColor = "text-white",
-  showSubtext = true,
+  width,
+  height,
+  alt = "WASP Solutions Group Logo",
+  priority = false,
 }: WaspLogoProps) {
+  const logoUrl = "https://firebasestorage.googleapis.com/v0/b/loretta3.firebasestorage.app/o/wasp%2Fwasp-logo-positivo.webp?alt=media&token=5da73de2-869e-4898-9344-9c6f5c1fa330";
   return (
-    <div className={`flex items-center space-x-2 ${className} ${textColor}`}>
-      <WrenchIcon className={iconSize} />
-      <div className="flex flex-col">
-        <span className={`${textSize} font-bold leading-none`}>WASP</span>
-        {showSubtext && (
-          <span className={`${subTextSize} -mt-0.5 leading-tight`}>SOLUTIONS GROUP</span>
-        )}
-      </div>
+    <div className={`flex items-center ${className}`}>
+      <Image
+        src={logoUrl}
+        alt={alt}
+        width={width}
+        height={height}
+        priority={priority}
+      />
     </div>
   );
 }

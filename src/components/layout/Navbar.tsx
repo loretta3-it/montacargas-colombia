@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { WaspLogo } from '@/components/icons/WaspLogo';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, MapPin, MessageSquare, Globe, Facebook, Instagram, Youtube, Twitter, Linkedin } from 'lucide-react';
-import { TikTokIcon } from '@/components/icons/TikTokIcon';
+import { Menu, MapPin, MessageSquare } from 'lucide-react'; // Removed unused social icons
 
 export default function Navbar() {
   const navLinks = [
@@ -29,7 +28,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground shadow-md h-16">
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <Link href="https://waspsolgroup.com/" target="_blank" rel="noopener noreferrer" className="flex items-center">
-          <WaspLogo textColor="text-primary-foreground" iconSize="h-7 w-7" textSize="text-xl" />
+          <WaspLogo width={120} height={35} priority />
         </Link>
 
         <div className="hidden md:flex items-center space-x-4">
@@ -47,7 +46,7 @@ export default function Navbar() {
             <SheetContent side="right" className="bg-primary text-primary-foreground w-[250px] p-6">
               <div className="flex flex-col space-y-4">
                 <Link href="https://waspsolgroup.com/" target="_blank" rel="noopener noreferrer" className="mb-4">
-                  <WaspLogo textColor="text-primary-foreground" iconSize="h-7 w-7" textSize="text-xl" />
+                  <WaspLogo width={120} height={35} priority />
                 </Link>
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href} passHref>
