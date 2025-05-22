@@ -9,7 +9,7 @@ export default function HomePage() {
       <div className="relative flex-grow flex flex-col text-white">
         {/* Background Image */}
         <Image
-          src="https://placehold.co/1920x1080.png"
+          src="https://firebasestorage.googleapis.com/v0/b/loretta3.firebasestorage.app/o/wasp%2FBanner1.jpg?alt=media&token=b43b9c22-f7a2-4608-9af6-aba4199e03b6"
           alt="Operario y supervisora en montacargas"
           layout="fill"
           objectFit="cover"
