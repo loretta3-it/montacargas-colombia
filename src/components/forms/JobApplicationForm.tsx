@@ -1,8 +1,7 @@
 // src/components/forms/JobApplicationForm.tsx
 "use client";
 
-import { useState, useEffect } from "react";
-import { useFormState } from "react-dom";
+import { useState, useEffect, useActionState } from "react"; // Changed from "react-dom"
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -51,7 +50,7 @@ type JobApplicationFormData = z.infer<typeof JobApplicationSchema>;
 const initialState: JobApplicationFormState = { message: null, success: false };
 
 export function JobApplicationForm() {
-  const [state, formAction] = useFormState(submitJobApplication, initialState);
+  const [state, formAction] = useActionState(submitJobApplication, initialState); // Changed from useFormState
   const { toast } = useToast();
   const router = useRouter();
   

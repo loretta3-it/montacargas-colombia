@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useFormState } from "react-dom";
+import { useActionState } from "react"; // Changed from "react-dom"
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -30,7 +30,7 @@ const initialState: InscriptionFormState = {
 };
 
 export function InscriptionForm() {
-  const [state, formAction] = useFormState(submitInscription, initialState);
+  const [state, formAction] = useActionState(submitInscription, initialState); // Changed from useFormState
   const { toast } = useToast();
   const router = useRouter();
 

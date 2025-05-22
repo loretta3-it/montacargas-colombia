@@ -1,11 +1,10 @@
 // src/components/quiz/QuizComponent.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useActionState } from "react"; // Changed from "react-dom"
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useFormState } from "react-dom";
 import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
@@ -50,7 +49,7 @@ export function QuizComponent() {
   const { toast } = useToast();
   const router = useRouter();
 
-  const [contactFormServerState, contactFormAction] = useFormState(submitQuizContact, initialContactFormState);
+  const [contactFormServerState, contactFormAction] = useActionState(submitQuizContact, initialContactFormState); // Changed from useFormState
 
   const contactForm = useForm<QuizContactFormData>({
     resolver: zodResolver(QuizContactSchema),
@@ -212,4 +211,3 @@ function QuizContactForm({ score, discountPercentage, formAction, rhfForm }: Qui
     </form>
   );
 }
-
