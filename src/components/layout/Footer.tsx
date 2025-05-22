@@ -17,7 +17,9 @@ export default function Footer() {
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-50 bg-primary text-primary-foreground shadow-md h-16">
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
-        <WaspLogo width={100} height={29} />
+        <Link href="https://waspsolgroup.com/" target="_blank" rel="noopener noreferrer" aria-label="WASP Oficial Website">
+          <WaspLogo width={100} height={29} />
+        </Link>
         
         <div className="flex items-center space-x-3 sm:space-x-4">
           {socialLinks.map((social) => (
