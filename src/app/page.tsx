@@ -2,6 +2,7 @@ import SharedLayout from '@/components/layout/SharedLayout';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { Newspaper } from 'lucide-react'; // Import icon for Blog button
 
 export default function HomePage() {
   return (
@@ -34,7 +35,7 @@ export default function HomePage() {
           </div>
 
           {/* Bottom section for buttons */}
-          <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-auto mb-4 md:mb-8">
+          <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mt-auto mb-4 md:mb-8">
             <Link href="/inscripcion" passHref legacyBehavior>
               <Button size="lg" className="w-full py-4 sm:py-6 text-base sm:text-lg bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-150 ease-in-out">
                 Inscribirse
@@ -53,6 +54,11 @@ export default function HomePage() {
             <Link href="/empleo" passHref legacyBehavior>
               <Button variant="default" size="lg" className="w-full py-4 sm:py-6 text-base sm:text-lg rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-150 ease-in-out">
                 Empleo
+              </Button>
+            </Link>
+            <Link href="/blog" passHref legacyBehavior>
+              <Button variant="default" size="lg" className="w-full py-4 sm:py-6 text-base sm:text-lg rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-150 ease-in-out flex items-center justify-center">
+                <Newspaper className="h-5 w-5 mr-2 sm:hidden md:inline-block" /> Blog
               </Button>
             </Link>
           </div>

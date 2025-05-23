@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { WaspLogo } from '@/components/icons/WaspLogo';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, MapPin, MessageSquare } from 'lucide-react'; // Removed unused social icons
+import { Menu, MapPin, MessageSquare, Newspaper } from 'lucide-react'; // Added Newspaper
 
 export default function Navbar() {
   const navLinks = [
@@ -11,6 +11,7 @@ export default function Navbar() {
     { href: "/curso", label: "Ver Curso" },
     { href: "/quiz", label: "Quiz 15% Desc." },
     { href: "/empleo", label: "Empleo" },
+    { href: "/blog", label: "Blog", icon: Newspaper }, // Added Blog link
   ];
 
   const contactIcons = (
@@ -31,6 +32,19 @@ export default function Navbar() {
           <WaspLogo width={120} height={35} priority />
         </Link>
 
+        {/* Desktop Nav Links - kept minimal, contact icons shown */}
+        <nav className="hidden md:flex items-center space-x-6">
+           {navLinks.filter(link => link.href !== "/").map((link) => ( // Filter out home for desktop main nav if desired
+            <Link key={link.href} href={link.href} passHref>
+              <Button variant="ghost" className="text-primary-foreground hover:bg-primary/80 px-3 py-2 flex items-center space-x-2">
+                {link.icon && <link.icon className="h-5 w-5" />}
+                <span>{link.label}</span>
+              </Button>
+            </Link>
+          ))}
+        </nav>
+
+
         <div className="hidden md:flex items-center space-x-4">
           {contactIcons}
         </div>
@@ -50,7 +64,10 @@ export default function Navbar() {
                 </Link>
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href} passHref>
-                     <Button variant="ghost" className="w-full justify-start text-primary-foreground hover:bg-primary/80">{link.label}</Button>
+                     <Button variant="ghost" className="w-full justify-start text-primary-foreground hover:bg-primary/80 flex items-center space-x-2">
+                       {link.icon && <link.icon className="h-5 w-5" />}
+                       <span>{link.label}</span>
+                     </Button>
                   </Link>
                 ))}
                 <div className="border-t border-primary-foreground/50 pt-4 mt-4">
